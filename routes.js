@@ -1,17 +1,21 @@
-//Local deps
-var controllers = require("./controllers");
+// Local deps
+var controllers = require('./controllers');
 
 var Router = {
+
     init: function(app) {
-    //Home page
-    app.get("/", controllers.Home.index);
-    //Users
-    app.get("/users", controllers.Users.index);
-    //About
-    app.get("/about", controllers.About.index);
-    
+
+        // Home page
+        app.get('/', controllers.Home.index);
+        
+        // About page
+        app.get('/about', controllers.About.index);
+
+        // Users
+        app.get('/users', controllers.Users.index);
+        
     }
-    
+
 };
 
 module.exports = Router;
