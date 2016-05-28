@@ -14,10 +14,19 @@ var Search = {
         var client = Helpers.getTwitterClient();
         
         var params = {
-            q: hashtag
+            q: hashtag,
+            lang: 'en',
+            result_type: 'mixed',
+            count: 30
         };
         
         client.get('search/tweets', params, function(err, tweets) {
+            if (err) {
+                console.error(err);
+                next(err);
+                return;
+            }
+            
             var data = {
             searchTerm: hashtag,
             numItems: 0
@@ -27,6 +36,7 @@ var Search = {
             data.items = tweets.statuses;
             data.numItems = data.items.length;
         }
+        
         res.render('search/index', data);
         
         });

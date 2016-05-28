@@ -14,16 +14,24 @@
     </form>
 </div>
 
-{% if numItems > 0 %}
+{% if searchTerm %}
+
+{% if numItems == 0 %}
+<h4>No Results for "{{ searchTerm }}"</h4>
+{% else %}
+
 <h4>Search for "{{ searchTerm }}" ({{ numItems }})</h4>
 <hr>
 
 <div class="container">
   <div class="row tweets-container">
-    {% for items in items %}
+    {% for item in items %}
       {% include "search/_item.html" %}
     {% endfor %}
   </div>
 </div>
 {% endif %}
+
+{% endif %}
+
 {% endblock %}
