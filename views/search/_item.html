@@ -1,10 +1,9 @@
-<!-- search/_item.html -->
 <div class="col-xs-4 tweet-item-container">
   <div class="tweet-item">
     <div class="row tweet-item-heading">
       <div class="col-sm-4 col-xs-12 tweet-user-avatar">
         <div class="media-middle">
-          <img class="media-object" src="{{ item.user.profile_image_url }}"/>
+          <img class="media-object" src="{{ item.user.profile_image_url }}" />
         </div>
       </div><!-- .tweet-user-avatar -->
       <div class="col-sm-8 col-xs-12 tweet-user-info">
@@ -41,7 +40,7 @@
         </div>
       </div><!-- .tweet-item-counts -->
       <div class="col-sm-6 col-xs-12 tweet-item-time">
-        <small>{{ item.created_at }}</small>
+        <small data-date="{{ item.created_at }}">{{ item.created_at }}</small>
       </div><!-- .tweet-item-time -->
     </div><!-- .tweet-item-footer -->
   </div><!-- .tweet-item -->
